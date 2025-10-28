@@ -23,6 +23,7 @@ This guide explains how to deploy a MongoDB replica set on kubernetes with:
     sudo kubectl create namespace mongodb-rs
 
  ```
+---
 ## Step 2: Create MongoDB Config File 
  - FIle name : mongo-configmap.yaml
 
@@ -48,6 +49,7 @@ data:
      
 
  ```
+---
 
 ## Step 3: DEploy MongoDB StatefulSet  (Replica Pods)
   
