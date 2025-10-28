@@ -24,6 +24,7 @@ This guide explains how to deploy a MongoDB replica set on kubernetes with:
 
  ```
 ## Step 2: Create MongoDB Config File 
+ - FIle name : mongo-configmap.yaml
 
   ```bash
     apiVersion: v1
