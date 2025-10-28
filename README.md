@@ -53,7 +53,7 @@ data:
 
 ## Step 3: Deploy MongoDB StatefulSet  (Replica Pods)
 
- - ** File name : mongo-statefulset.yaml **
+ - **File name : mongo-statefulset.yaml**
  ```bash
   apiVersion: apps/v1
   kind: StatefulSet
@@ -109,7 +109,7 @@ spec:
 ```
 ---
 ## STEP 4:Create Arbiter Deployment 
- - ** File name : mongo-arbiter.yaml **
+ - **File name : mongo-arbiter.yaml**
 
  ```bash
 apiVersion: apps/v1
