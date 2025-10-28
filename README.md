@@ -55,7 +55,7 @@ data:
 
  - File name : mongo-statefulset.yaml
  ```bash
-    apiVersion: apps/v1
+  apiVersion: apps/v1
   kind: StatefulSet
 metadata:
   name: mongo
@@ -105,4 +105,35 @@ spec:
     requests:
       storage: 10Gi
 
-    ```
+
+```
+---
+## STEP 4:Create Arbiter Deployment 
+ - File name : mongo-arbiter.yaml
+
+ ```bash
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arbiter
+  namespace: mongodb-rs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arbiter
+  template:
+    metadata:
+      labels:
+        app: arbiter
+    spec:
+      containers:
+      - name: mongo-arbiter
+        image: mongo:6
+        command: ["mongod"]
+        args: ["--replSet", "rs0", "--bind_ip_all"]
+        ports:
+        - containerPort: 27017
+```
+---
+
