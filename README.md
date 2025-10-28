@@ -45,3 +45,9 @@ data:
       ]
     })
     EOF
+     
+
+ ```
+
+## Step 3: DEploy MongoDB StatefulSet  (Replica Pods)
+  
