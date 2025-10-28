@@ -25,7 +25,7 @@ This guide explains how to deploy a MongoDB replica set on kubernetes with:
  ```
 ---
 ## Step 2: Create MongoDB Config File 
- - FIle name : mongo-configmap.yaml
+ - File name : mongo-configmap.yaml
 
   ```bash
     apiVersion: v1
@@ -51,5 +51,58 @@ data:
  ```
 ---
 
-## Step 3: DEploy MongoDB StatefulSet  (Replica Pods)
-  
+## Step 3: Deploy MongoDB StatefulSet  (Replica Pods)
+
+ - File name : mongo-statefulset.yaml
+ ```bash
+    apiVersion: apps/v1
+  kind: StatefulSet
+metadata:
+  name: mongo
+  namespace: mongodb-rs
+spec:
+  serviceName: "mongo"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+      - name: mongo
+        image: mongo:6
+        command: ["mongod"]
+        args: ["--replSet", "rs0", "--bind_ip_all"]
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: mongo-persistent-storage
+          mountPath: /data/db
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+      volumes:
+      - name: mongo-persistent-storage
+        persistentVolumeClaim:
+          claimName: mongo-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+  namespace: mongodb-rs
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+
+    ```
