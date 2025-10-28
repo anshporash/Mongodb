@@ -1,6 +1,6 @@
 # Mongodb
 
-## Mongodb cluster with single string ( url )
+##  **Mongodb cluster with single string ( url )**
 
 This guide explains how to deploy a MongoDB replica set on kubernetes with:
    - 2MongoDB replica pod (one high config ,one low config)
