@@ -10,4 +10,15 @@ This guide explains how to deploy a MongoDB replica set on kubernetes with:
  ---
  ## Perequisites
 
- -kubectl configured
+ - kubectl configured
+ - Helm (Optional)
+ - MongoDB image ( mongo:6 or latest )
+ - Persistent storage ( PVC )
+
+---
+
+## Step :1  Create Namespace 
+
+  ```bash
+    sudo kubectl create namespace mongodb-rs
+    ```
