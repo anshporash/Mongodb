@@ -17,7 +17,7 @@ This guide explains how to deploy a MongoDB replica set on kubernetes with:
 
 ---
 
-## Step :1  Create Namespace 
+## Step 1: Create Namespace 
 
   ```bash
     sudo kubectl create namespace mongodb-rs
