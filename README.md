@@ -25,7 +25,7 @@ This guide explains how to deploy a MongoDB replica set on kubernetes with:
  ```
 ---
 ## Step 2: Create MongoDB Config File 
- -**File name : mongo-configmap.yaml**
+ - **File name : mongo-configmap.yaml**
 
   ```bash
     apiVersion: v1
@@ -136,4 +136,26 @@ spec:
         - containerPort: 27017
 ```
 ---
+
+## STEP 5: Headless Service  
+ - **File name : mongo-service.yaml**
+
+ ```bash
+ apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+  namespace: mongodb-rs
+spec:
+  ports:
+  - port: 27017
+    name: mongo
+  clusterIP: None
+  selector:
+    app: mongo
+
+```
+---
+
+
 
