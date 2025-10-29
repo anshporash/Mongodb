@@ -206,7 +206,7 @@ rs.status()
     { _id: 1, name: "mongo-1.mongo.mongodb-rs.svc.cluster.local:27017", stateStr: "SECONDARY" },
     { _id: 2, name: "arbiter-7d9c44d66f-w2cxg.arbiter.mongodb-rs.svc.cluster.local:27017", stateStr: "ARBITER" }
   ]
-}
+  }
  ```
     
   
