@@ -171,7 +171,7 @@ spec:
   ```bash
     mongosh
   ```
---
+
 2. **Priority set up**
  ```bash
     rs.initiate({
@@ -183,6 +183,8 @@ spec:
   ]
 })
   ```
+-  Note :- The arbiter’s hostname may vary (you can check it with kubectl get pods -n mongodb-rs -o wide).
+Replace the arbiter pod name (arbiter-7d9c44d66f-w2cxg) with your actual arbiter pod name.
       
 
 
