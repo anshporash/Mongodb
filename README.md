@@ -160,8 +160,9 @@ spec:
 ## STEP 6: Initialize Replica Set
 - After all pods are running execute :
    ```bash
-   Kubectl exec -it mongo-0 -n mongodb-rs --bash /config/init.sh
+   Kubectl exec -it mongo-0 -n mongodb-rs --bash
    ```
+ - Now you will be inside the MongoDB container (you will see a prompt like root@mongo-0:/#).
 - **This intializes the replica set with:**
     - mongo-0 (Primary)
     - mongo-1 (Secondary)
