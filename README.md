@@ -167,11 +167,12 @@ spec:
     - mongo-0 (Primary)
     - mongo-1 (Secondary)
     - arbiter (Arbiter)
-  1. Open Mongo Shell (mongosh)
+1. **Open Mongo Shell (mongosh)**
   ```bash
     mongosh
-    ```
-  2. Priorty set up
+  ```
+--
+2. **Priority set up**
  ```bash
     rs.initiate({
   _id: "rs0",
