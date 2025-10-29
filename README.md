@@ -207,8 +207,12 @@ rs.status()
     { _id: 2, name: "arbiter-7d9c44d66f-w2cxg.arbiter.mongodb-rs.svc.cluster.local:27017", stateStr: "ARBITER" }
   ]
   }
- 
- ```
+  ```
+  - Means everything is working:
+    - `PRIMARY`- the main writable node
+    - `SECONDARY`- replica
+    - `ARBITER`- voting node  
+
     
   
       
