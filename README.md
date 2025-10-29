@@ -162,7 +162,7 @@ spec:
    ```bash
    Kubectl exec -it mongo-0 -n mongodb-rs --bash /config/init.sh
    ```
-   - **This intializes the replica set with:**
+- **This intializes the replica set with:**
     - mongo-0 (Primary)
     - mongo-1 (Secondary)
     - arbiter (Arbiter)
