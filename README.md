@@ -185,6 +185,19 @@ spec:
   ```
 -  Note :- The arbiter’s hostname may vary (you can check it with kubectl get pods -n mongodb-rs -o wide).
 Replace the arbiter pod name (arbiter-7d9c44d66f-w2cxg) with your actual arbiter pod name.
+
+- After pressing Enter,you should see:
+  ```bash
+  {"ok" : 1 }
+    ```
+## This means your replica set was initialized successfully!
+3. Check Replica Set Status
+- Run this command inside `mongosh`:
+ ```bash
+rs.status()
+   ```
+
+  
       
 
 
