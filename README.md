@@ -190,7 +190,7 @@ Replace the arbiter pod name (arbiter-7d9c44d66f-w2cxg) with your actual arbiter
   ```bash
   {"ok" : 1 }
     ```
-## This means your replica set was initialized successfully!
+### This means your replica set was initialized successfully!
 3. Check Replica Set Status
 - Run this command inside `mongosh`:
  ```bash
