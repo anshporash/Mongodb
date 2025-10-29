@@ -216,7 +216,8 @@ rs.status()
 4. Exit the shell
  ```bash
  exit
-   ``` 
+   ```
+---
 ## STEP 7: Connection String (for MongoDB Compass)
 - Use this connection URL in MongoDB Compass:
    ```bash
@@ -224,6 +225,21 @@ rs.status()
 
      ```
    - MongoDB Compass will automatically connect to the available primary node - ensuring no downtime if one node fails.
-     
+---
 
+## Verification
+-check replica set status:
+ ```bash
+ kubectl exec -it mongo-0 -n mongodb-rs -- mongosh --eval "rs.status()"
+   ``` 
+- You should see:
+   - One PRIMARY
+   - One SECONDARY
+   - One ARBITER
+---
+## Notes
+ - You can modify the resource requests/limits in the YAML for high and low configration pods individually.
+ - The replica set ensures automatic failover-- your app or Compass always connects to an active node.
+ - Arbiter participates only in elections (no data stored).
+  
 
