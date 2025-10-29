@@ -167,6 +167,21 @@ spec:
     - mongo-0 (Primary)
     - mongo-1 (Secondary)
     - arbiter (Arbiter)
+  1. Open Mongo Shell (mongosh)
+  ```bash
+    mongosh
+    ```
+  2. Priorty set up
+ ```bash
+    rs.initiate({
+  _id: "rs0",
+  members: [
+    { _id: 0, host: "mongo-0.mongo.mongodb-rs.svc.cluster.local:27017", priority: 2 },
+    { _id: 1, host: "mongo-1.mongo.mongodb-rs.svc.cluster.local:27017", priority: 1 },
+    { _id: 2, host: "arbiter-7d9c44d66f-w2cxg.arbiter.mongodb-rs.svc.cluster.local:27017", arbiterOnly: true }
+  ]
+})
+  ```
       
 
 
