@@ -199,6 +199,15 @@ rs.status()
 
 - you should see output like this:
   ```bash
+  {
+  set: 'rs0',
+  members: [
+    { _id: 0, name: "mongo-0.mongo.mongodb-rs.svc.cluster.local:27017", stateStr: "PRIMARY" },
+    { _id: 1, name: "mongo-1.mongo.mongodb-rs.svc.cluster.local:27017", stateStr: "SECONDARY" },
+    { _id: 2, name: "arbiter-7d9c44d66f-w2cxg.arbiter.mongodb-rs.svc.cluster.local:27017", stateStr: "ARBITER" }
+  ]
+}
+ ```
     
   
       
