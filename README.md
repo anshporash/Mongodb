@@ -213,8 +213,16 @@ rs.status()
     - `SECONDARY`- replica
     - `ARBITER`- voting node  
 
+4. Exit the shell
+ ```bash
+ exit
+   ``` 
+## STEP 7: Connection String (for MongoDB Compass)
+- Use this connection URL in MongoDB Compass:
+   ```bash
     
-  
-      
+     ```
+   - MongoDB Compass will automatically connect to the available primary node - ensuring no downtime if one node fails.
+     
 
 
