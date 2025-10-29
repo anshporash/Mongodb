@@ -220,7 +220,8 @@ rs.status()
 ## STEP 7: Connection String (for MongoDB Compass)
 - Use this connection URL in MongoDB Compass:
    ```bash
-    
+    mongodb://mongo-0.mongo.mongodb-rs.svc.cluster.local:27017,mongo-1.mongo.mongodb-rs.svc.cluster.local:27017,arbiter.mongo.mongodb-rs.svc.cluster.local:27017/?replicaSet=rs0
+
      ```
    - MongoDB Compass will automatically connect to the available primary node - ensuring no downtime if one node fails.
      
